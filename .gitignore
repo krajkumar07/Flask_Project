@@ -62,6 +62,7 @@ coverage.xml
 # VS Code settings
 .vscode/
 
+
 # Mac OS files
 .DS_Store
 
