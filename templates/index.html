@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Data</title>
+</head>
+<body>
+    <h1>Submit your data</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+        <li style="color: {{ 'red' if category == 'error' else 'green' }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    
+    <form method="POST" action="/">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
